@@ -21,7 +21,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /*
- * Đọc Bearer toeken, validate và set SecurityContext
+ * Đọc Bearer token, validate và set SecurityContext
  */
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {

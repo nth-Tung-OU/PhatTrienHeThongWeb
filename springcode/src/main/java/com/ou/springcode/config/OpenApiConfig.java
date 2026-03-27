@@ -18,7 +18,6 @@ public class OpenApiConfig {
                         .title("SpringCode API")
                         .description("API thực hành Spring Boot: Auth, User CRUD, phân quyền")
                         .version("1.0"))
-                .addSecurityItem(new SecurityRequirement().addList("bearerAuth"))
                 .components(new Components()
                         .addSecuritySchemes("bearerAuth",
                                 new SecurityScheme()

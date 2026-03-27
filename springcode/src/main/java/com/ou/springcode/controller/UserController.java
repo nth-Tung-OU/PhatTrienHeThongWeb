@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "Users", description = "CRUD User, phân trang, lọc")
 @RestController
 @RequestMapping("/api/users")
+@SecurityRequirement(name = "bearerAuth")
 public class UserController {
     private final UserService userService;
 

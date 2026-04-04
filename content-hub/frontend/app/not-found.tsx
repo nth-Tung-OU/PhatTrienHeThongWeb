@@ -1,0 +1,22 @@
+import Link from "next/link";
+
+export default function NotFound() {
+    return (
+        <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+            <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+                <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
+                    404 - Page Not Found
+                </h1>
+                <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+                    The page you are looking for does not exist. Please check the URL or return to the homepage.
+                </p>
+                <Link
+                    href="/"
+                    className="inline-flex items-center rounded-md bg-black px-4 py-2 text-sm font-medium text-white hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                >
+                    Go back home
+                </Link>
+            </main>
+        </div>
+    );
+}

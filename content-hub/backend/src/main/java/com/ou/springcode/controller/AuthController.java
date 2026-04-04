@@ -42,7 +42,6 @@ public class AuthController {
     }
 
     @Operation(summary = "Thông tin user hiện tại (cần JWT)")
-    @SecurityRequirement(name = "bearerAuth")
     @GetMapping("/me")
     public ResponseEntity<UserResponse> me(@AuthenticationPrincipal UserDetails userDetails) {
         if(userDetails == null) {

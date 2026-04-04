@@ -10,14 +10,14 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class OpenApiConfig {
-
+    final String securitySchemeName = "bearerAuth";
     @Bean
     public OpenAPI openAPI() {
         return new OpenAPI()
                 .info(new Info()
                         .title("SpringCode API")
-                        .description("API thực hành Spring Boot: Auth, User CRUD, phân quyền")
                         .version("1.0"))
+                .addSecurityItem(new SecurityRequirement().addList(securitySchemeName))
                 .components(new Components()
                         .addSecuritySchemes("bearerAuth",
                                 new SecurityScheme()

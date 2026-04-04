@@ -1,0 +1,40 @@
+@import 'tailwindcss';
+
+/* theme: {
+  extend: {
+    fontFamily: {
+      sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+    },
+    colors: {
+      brand: {
+        50: '#eef4ff',
+        100: '#d9e6ff',
+        500: '#3b6cff',
+        600: '#2554eb',
+        700: '#1d42c4',
+      },
+    },
+  },
+}, */
+
+@theme {
+  --font-san: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --colors-brand-50: #eef4ff,
+  --colors-brand-100: #d9e6ff,
+  --colors-brand-500: #3b6cff,
+  --colors-brand-600: #2554eb,
+  --colors-brand-700: #1d42c4,
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  text-align: initial;
+  border: none;
+}

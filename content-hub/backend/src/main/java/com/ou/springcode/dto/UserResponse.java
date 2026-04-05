@@ -18,9 +18,10 @@ public record UserResponse(
         String username,
         String email,
         String fullName,
+        Role role,
         Instant createdAt,
         Instant updatedAt
     ) {
-        this(id, username, email, null, fullName, createdAt, updatedAt);
+        this(id, username, email, role, fullName, createdAt, updatedAt);
     }
 }

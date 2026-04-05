@@ -15,6 +15,7 @@ public class UserMapper {
             user.getId(),
             user.getUsername(),
             user.getEmail(),
+            user.getRole(),
             user.getFullName(),
             user.getCreatedAt(),
             user.getUpdatedAt()

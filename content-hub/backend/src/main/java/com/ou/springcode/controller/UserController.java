@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -46,10 +47,25 @@ public class UserController {
         return ResponseEntity.ok(users);
     }
 
+    @Operation(summary = "Xóa user")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id){
         userService.delete(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @Operation(summary = "Cập nhật role")
+    @PutMapping("/{id}/role")
+    public ResponseEntity<UserResponse> updateRole(@PathVariable Long id, @RequestParam Role role){
+        UserResponse updatedUser = userService.updateRole(id, role);
+        return ResponseEntity.ok(updatedUser);
+    }
+
+    @Operation(summary = "Cập nhật full name")
+    @PutMapping("/{id}/fullname")
+    public ResponseEntity<UserResponse> updateFullName(@PathVariable Long id, @RequestParam String fullName){
+        UserResponse updatedUser = userService.updateFullName(id, fullName);
+        return ResponseEntity.ok(updatedUser);
     }
 
 }

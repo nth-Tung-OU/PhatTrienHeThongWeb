@@ -44,6 +44,7 @@ public class UserService {
         return userMapper.toResponse(user);
     }
 
+    @Transactional
     public void delete(Long id) {
         userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User", id));
@@ -51,6 +52,25 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
-    // update
-    // delete...
+    @Transactional
+    public UserResponse updateRole(Long id, Role role) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("User", id));
+
+        user.setRole(role);
+        User updatedUser = userRepository.save(user);
+
+        return userMapper.toResponse(updatedUser);
+    }
+
+    @Transactional
+    public UserResponse updateFullName(Long id, String fullName) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("User", id));
+
+        user.setFullName(fullName);
+        User updatedUser = userRepository.save(user);
+
+        return userMapper.toResponse(updatedUser);
+    }
 }
